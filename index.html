@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopDrive</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+      
+        header {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        header img.logo {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: #fffcfc;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: #000000;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px; 
+        }
+
+        .hero-text h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffcc00; 
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #000000; 
+        }
+
+        .btn-main {
+            display: inline-block;
+            text-decoration: none;
+            color: #0e0d0d;
+            background-color: #ffcc00;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #ffb700;
+            transform: scale(1.05);
+        }
+
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+       
+        .highlights {
+            margin-top: 20px;
+        }
+
+        .highlights h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+       
+        .car-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .car-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .car-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .car-item h2 {
+            font-size: 1.4em;
+            margin: 10px 0;
+            color: #003366;
+        }
+
+        .car-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .btn-info {
+            display: inline-block;
+            text-decoration: none;
+            color: #003366;
+            background-color: #ffcc00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-info:hover {
+            background-color: #ffb700;
+            color: #000000;
+        }
+
+       
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .testimonial-content {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        blockquote {
+            border-left: 4px solid #ffcc00;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #003366; 
+        }
+
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+
+        
+        @media (max-width: 768px) {
+            .car-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .car-item {
+                width: 100%;
+            }
+        }
+
+        p {
+            color: #333; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="TopDrive Logo" class="logo">
+            <h1>TopDrive</h1>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Carros</a>
+                <a href="#">Sobre Nós</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Encontre Seu Carro Ideal</h2>
+            <p>Explore nossa seleção de carros de alta qualidade com preços competitivos.</p>
+            <a href="#" class="btn-main">Ver Ofertas</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="highlights">
+            <h2>Carros em Destaque</h2>
+            <div class="main-content">
+                <div class="car-item">
+                    <img src="BMWx1.jpg" alt="BMWx1">
+                    <h2>BMWx1 2014</h2>
+                    <p>Preço: R$ 300.000</p>
+                    <p>Descrição: Carro esportivo com ótimo desempenho e conforto.</p>
+                    <a href="#" class="btn-info">Mais Informações</a>
+                </div>
+                <div class="car-item">
+                    <img src="carro2.jpg" alt="Hyundai Sonata">
+                    <h2>Hyundai Sonata 2014</h2>
+                    <p>Preço: R$ 75.000</p>
+                    <p>Descrição: Carro econômico e ideal para a cidade.</p>
+                    <a href="#" class="btn-info">Mais Informações</a>
+                </div>
+                <div class="car-item">
+                    <img src="carro3.jpg" alt="Land Rover">
+                    <h2>Land Rover 2022</h2>
+                    <p>Preço: R$ 479.990</p>
+                      <p>Descrição:carro de luxo com conforto que te onde você quiser</p>
+                      <a href="#" class="btn-info">Mais Informações</a>
+                </div>
